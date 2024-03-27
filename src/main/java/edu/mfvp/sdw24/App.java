@@ -1,5 +1,6 @@
 package edu.mfvp.sdw24;
 
+import edu.mfvp.sdw24.application.AskChampionUseCase;
 import edu.mfvp.sdw24.application.ListChampionsUseCase;
 import edu.mfvp.sdw24.domain.ports.ChampionRepository;
 import org.springframework.boot.SpringApplication;
@@ -16,6 +17,11 @@ public class App {
     @Bean
     ListChampionsUseCase provideListChampionsUseCase(ChampionRepository championRepository) {
         return new ListChampionsUseCase(championRepository);
+    }
+
+    @Bean
+    AskChampionUseCase provideAskChampionUseCase(ChampionRepository championRepository) {
+        return new AskChampionUseCase(championRepository);
     }
 
 }
